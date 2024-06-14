@@ -1,5 +1,18 @@
 package org.safehouse.housemicroservice.service;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.safehouse.housemicroservice.model.entity.House;
+import org.safehouse.housemicroservice.repository.HouseRepository;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -13,31 +26,12 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mockito;
-import org.safehouse.housemicroservice.model.entity.House;
-import org.safehouse.housemicroservice.repository.HouseRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.aot.DisabledInAotMode;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.web.client.RestClientException;
-import org.springframework.web.client.RestTemplate;
-
-@ContextConfiguration(classes = {HouseService.class})
-@ExtendWith(SpringExtension.class)
-@DisabledInAotMode
+@ExtendWith(MockitoExtension.class)
 class HouseServiceTest {
-	@MockBean
+	@Mock
 	private HouseRepository houseRepository;
 
-	@Autowired
+	@InjectMocks
 	private HouseService houseService;
 
 	/**
