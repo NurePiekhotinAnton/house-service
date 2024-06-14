@@ -54,4 +54,4 @@ jobs:
         run: |
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID
           az account set --subscription $AZURE_SUBSCRIPTION_ID
-          az spring app deploy --name $AZURE_SPRING_APPS_APP_NAME --source-path ./app.jar --service $AZURE_SPRING_APPS_SERVICE --resource-group $AZURE_RESOURCE_GROUP
+          az spring app deploy --name $AZURE_SPRING_APPS_APP_NAME --resource-group $AZURE_RESOURCE_GROUP --service $AZURE_SPRING_APPS_SERVICE --jar-path ./app.jar
