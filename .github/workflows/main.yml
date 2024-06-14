@@ -52,5 +52,4 @@ jobs:
           az spring app deploy --name ${{ secrets.AZURE_SPRING_APPS_APP_NAME }} \
             --service ${{ secrets.AZURE_SPRING_APPS_SERVICE }} \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --source-path target/*.jar \
-            --deployment default
+            --artifact-path target/*.jar \
