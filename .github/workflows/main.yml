@@ -25,12 +25,7 @@ jobs:
       - name: Build with Maven
         run: mvn clean package -DskipTests
 
-  unit-tests:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Maven unit tests
+      - name: Run unit tests
         run: mvn test
 
   deploy:
