@@ -1,5 +1,5 @@
 # Use the official OpenJDK 17 image as a parent image
-FROM adoptopenjdk/openjdk17:alpine
+FROM openjdk:17-jdk-alpine
 #
 ## Set the working directory in the container
 #WORKDIR /app
