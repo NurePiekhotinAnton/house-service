@@ -9,5 +9,5 @@ public class HouseMicroserviceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HouseMicroserviceApplication.class, args);
 	}
-
+	// test
 }
